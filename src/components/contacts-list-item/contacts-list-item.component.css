@@ -1,0 +1,13 @@
+.card-container {
+  padding: 10px;
+}
+
+.row {
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.input {
+  padding-right: 25px;
+}

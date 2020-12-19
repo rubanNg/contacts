@@ -1,0 +1,55 @@
+<mat-card class="contact-card" *ngIf="contactForm">
+  <mat-card-content>
+    <div class="contact-form">
+      <form [formGroup]="contactForm">
+        <div class="form-row">
+          <div class="form-row-item">
+            <mat-form-field class="form-input">
+              <mat-label>Имя</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+          </div>
+          <div class="form-row-item">
+            <mat-form-field class="form-input">
+              <mat-label>Телефон</mat-label>
+              <input matInput formControlName="phone">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row-label">Адрес</div>
+        <div class="form-row" formGroupName="adress">
+          <div class="form-row-item">
+            <mat-form-field class="form-input">
+              <mat-label>Улица</mat-label>
+              <input matInput formControlName="street">
+            </mat-form-field>
+          </div>
+          <div class="form-row-item">
+            <mat-form-field class="form-input">
+              <mat-label>Дом</mat-label>
+              <input matInput formControlName="suite">
+            </mat-form-field>
+          </div>
+          <div class="form-row-item">
+            <mat-form-field class="form-input">
+              <mat-label>Город</mat-label>
+              <input matInput formControlName="city">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-row-item">
+            <mat-form-field class="form-input">
+              <mat-label>Возраст</mat-label>
+              <input matInput formControlName="age">
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [disabled]="contactForm.invalid"  color="primary" (click)="save()">Создать</button>
+    <button mat-raised-button color="warn" (click)="close(null)">Отмена</button>
+  </mat-card-actions>
+</mat-card>

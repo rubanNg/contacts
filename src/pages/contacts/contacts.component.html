@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbar-row">
+    <span>Контакты</span>
+
+    <div class="create-section">
+      <button mat-raised-button color="warn" (click)="openPanel()" >Добавить</button>
+    </div>
+
+    <div class="search-section">
+      <form [formGroup]="searchForm">
+        <mat-form-field class="filter-form-field">
+          <mat-label class="label-size">Поиск</mat-label>
+          <input matInput formControlName="search" class="filter-input">
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div class="user-info">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+        {{ userInfo.user }}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">Выйти</button>
+      </mat-menu>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  
+  <ng-conttainer *ngIf="loading">
+    <div class="loading"><mat-spinner></mat-spinner></div>
+  </ng-conttainer>
+
+  <ng-container *ngIf="!loading">
+
+    <ng-container *ngIf="contactsList.length">
+      <div class="contacts-list">
+        <app-contacts-list 
+          (delete)="delete($event)" 
+          (update)="update($event)"  
+          [contacts]="contactsList">
+        </app-contacts-list>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="!contactsList.length">
+      <mat-card style="margin-top: 30px;">
+        <div class="no-contacts">Нет контактов</div>
+      </mat-card>
+    </ng-container>
+
+  </ng-container>
+
+</div>

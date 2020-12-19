@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 50px;
+  height: auto;
+}
+
+.filter {
+  width: 80%;
+}
+.filter-form-field {
+  width: 100%;
+}
+
+.contacts-list {
+  height: calc(100vh - 165px);
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+
+.search-section {
+  width: 60%;
+}
+.label-size {
+  font-size: 12px;
+}
+
+.no-contacts {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}

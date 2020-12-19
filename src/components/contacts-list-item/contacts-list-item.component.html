@@ -1,0 +1,52 @@
+<div class="card-container" *ngIf="contactForm">
+  <form [formGroup]="contactForm">
+    <input type="hidden" name="id" formControlName="_id">
+    <mat-card class="contact-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-form-field class="input">
+            <mat-label>Имя</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+        </mat-card-title>
+        <mat-card-subtitle>
+          Адрес
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row" formGroupName="adress">
+          <mat-form-field class="input">
+            <mat-label>Город</mat-label>
+            <input matInput formControlName="city">
+          </mat-form-field>
+          <mat-form-field class="input">
+            <mat-label>Улица</mat-label>
+            <input matInput formControlName="street">
+          </mat-form-field>
+          <mat-form-field class="input">
+            <mat-label>Дом</mat-label>
+            <input matInput formControlName="suite">
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="input">
+            <mat-label>Возраст</mat-label>
+            <input matInput formControlName="age">
+          </mat-form-field>
+          <mat-form-field class="input">
+            <mat-label>Телефон</mat-label>
+            <input matInput formControlName="phone">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="card-buttons">
+          <button mat-raised-button (click)="editContact()" color="primary">
+            {{ contactForm.enabled ? 'Сохранить' : 'Редактировать'}}
+          </button>
+          <button mat-raised-button (click)="deleteContact(contact)" color="warn">Удалить</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

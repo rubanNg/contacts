@@ -1,0 +1,11 @@
+<ng-container *ngIf="contacts">
+  <div class="grid-container">
+    <div class="grid-container-item" *ngFor="let contact of contacts; let index = index">
+      <app-contacts-list-item 
+        (delete)="emitDelete($event)" 
+        (update)="emitUpdate($event)" 
+        [contact]="contact">
+      </app-contacts-list-item>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,18 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+  justify-content: flex-start;
+}
+
+.form-row-item {
+  padding: 0px 10px;
+}
+
+.row-label {
+  height: auto;
+  padding: 0px 10px;
+  padding-bottom: 15px;
+}
